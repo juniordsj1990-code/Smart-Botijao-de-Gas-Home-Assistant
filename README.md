@@ -1,6 +1,6 @@
 # Botijão de Gás – Integração para Home Assistant
 
-![botijao_gas](https://github.com/juniordsj1990-code/Smart-Botijao-de-Gas-Home-Assistant/blob/main/botijao_gas_integration/assets/icon.png)
+![botijao_gas](https://github.com/juniordsj1990-code/Smart-Botijao-de-Gas-Home-Assistant/blob/main/assets/icon.png)
 
 [![Repositório](https://img.shields.io/badge/GitHub-Smart--Botijao--de--Gas--Home--Assistant-blue)](https://github.com/juniordsj1990-code/Smart-Botijao-de-Gas-Home-Assistant)
 [![Autor](https://img.shields.io/badge/autor-juniordsj1990--code-orange)](https://github.com/juniordsj1990-code)
