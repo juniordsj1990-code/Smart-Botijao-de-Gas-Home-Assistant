@@ -1,0 +1,55 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Gas Cylinder Scale",
+        "description": "Configure the weight sensor (HX711) used as the gas cylinder scale.",
+        "data": {
+          "name": "Name",
+          "source_entity": "Raw weight sensor (HX711 WeightRaw)",
+          "capacity_kg": "Cylinder capacity (kg)"
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Advanced options",
+        "data": {
+          "raw_per_kg": "Raw units per kg (scale factor)",
+          "filter_window": "Moving average filter window (number of readings)",
+          "m3_per_kg": "m³ of gas per kg consumed (for the Energy dashboard)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "peso_disponivel": { "name": "Available Weight" },
+      "peso_bruto": { "name": "Raw Weight" },
+      "verificacao_raw": { "name": "Raw Check" },
+      "percentual": { "name": "Percentage" },
+      "dias_em_uso": { "name": "Days In Use" },
+      "estimativa_esgotamento": { "name": "Depletion Estimate" },
+      "consumo_m3": { "name": "Accumulated Consumption" }
+    },
+    "binary_sensor": {
+      "gas_baixo": { "name": "Low Gas" }
+    },
+    "number": {
+      "tara": { "name": "Tare" },
+      "ajuste": { "name": "Fine Adjustment" },
+      "zero_balanca": { "name": "Scale Zero" },
+      "limite_alerta": { "name": "Alert Threshold" }
+    },
+    "datetime": {
+      "ultima_troca": { "name": "Last Swap" }
+    },
+    "button": {
+      "calibrar_zero": { "name": "Calibrate Zero" },
+      "botijao_trocado": { "name": "Cylinder Swapped" },
+      "notificar_status": { "name": "Notify Status" }
+    }
+  }
+}

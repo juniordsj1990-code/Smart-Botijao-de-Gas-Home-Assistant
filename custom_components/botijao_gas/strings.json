@@ -1,0 +1,55 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Botijão de Gás",
+        "description": "Configure o sensor de peso (HX711) usado como balança do botijão.",
+        "data": {
+          "name": "Nome",
+          "source_entity": "Sensor de peso bruto (HX711 WeightRaw)",
+          "capacity_kg": "Capacidade do botijão (kg)"
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opções avançadas",
+        "data": {
+          "raw_per_kg": "Unidades brutas por kg (fator de escala)",
+          "filter_window": "Janela do filtro de média móvel (nº de leituras)",
+          "m3_per_kg": "m³ de gás por kg consumido (para o Painel de Energia)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "peso_disponivel": { "name": "Peso Disponível" },
+      "peso_bruto": { "name": "Peso Bruto" },
+      "verificacao_raw": { "name": "Verificação Raw" },
+      "percentual": { "name": "Percentual" },
+      "dias_em_uso": { "name": "Dias em Uso" },
+      "estimativa_esgotamento": { "name": "Estimativa de Esgotamento" },
+      "consumo_m3": { "name": "Consumo Acumulado" }
+    },
+    "binary_sensor": {
+      "gas_baixo": { "name": "Gás Baixo" }
+    },
+    "number": {
+      "tara": { "name": "Tara" },
+      "ajuste": { "name": "Ajuste Fino" },
+      "zero_balanca": { "name": "Zero da Balança" },
+      "limite_alerta": { "name": "Limite de Alerta" }
+    },
+    "datetime": {
+      "ultima_troca": { "name": "Última Troca" }
+    },
+    "button": {
+      "calibrar_zero": { "name": "Calibrar Zero" },
+      "botijao_trocado": { "name": "Botijão Trocado" },
+      "notificar_status": { "name": "Notificar Status" }
+    }
+  }
+}

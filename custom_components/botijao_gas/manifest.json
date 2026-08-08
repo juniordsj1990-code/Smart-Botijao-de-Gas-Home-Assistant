@@ -1,0 +1,13 @@
+{
+  "domain": "botijao_gas",
+  "name": "Botijão de Gás",
+  "codeowners": ["@juniordsj1990-code"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/juniordsj1990-code/Smart-Botijao-de-Gas-Home-Assistant",
+  "issue_tracker": "https://github.com/juniordsj1990-code/Smart-Botijao-de-Gas-Home-Assistant/issues",
+  "integration_type": "device",
+  "iot_class": "calculated",
+  "requirements": [],
+  "version": "1.0.0"
+}
