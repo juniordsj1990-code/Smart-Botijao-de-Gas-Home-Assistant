@@ -9,5 +9,6 @@
   "integration_type": "device",
   "iot_class": "calculated",
   "requirements": [],
+  "logo": "assets/logo.png"
   "version": "1.0.0"
 }
