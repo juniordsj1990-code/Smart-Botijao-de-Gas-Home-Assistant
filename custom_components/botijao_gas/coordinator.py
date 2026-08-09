@@ -155,13 +155,19 @@ class BotijaoGasData:
         # Verificação raw - diagnóstico bruto, sem escala (equivalente ao tira_teima_2)
         self.verificacao_raw = max(round(raw_filtrado - self.zero_balanca), 0)
 
-        # Peso disponível = carga real (equivalente ao template_com_filtro)
+        # Peso disponível = carga real (equivalente ao template_com_filtro,
+        # mas com clamp em vez de zerar quando sai da faixa - ver nota abaixo)
         carga = round(peso_bruto - self.tara - self.ajuste, 3)
         carga_truncada = int(carga * 100) / 100
-        if 0 <= carga_truncada <= self.capacity:
-            self.peso_disponivel = carga_truncada
-        else:
-            self.peso_disponivel = 0.0
+        # Nota: o template original zerava o peso disponível sempre que a
+        # leitura saía da faixa 0..capacidade (ex.: balança ainda não
+        # calibrada, dando um peso bruto acima da capacidade). Isso fazia
+        # a integração soar um falso alerta de "gás baixo" logo na primeira
+        # configuração, antes mesmo da calibração. Preferimos limitar
+        # (clamp) o valor à faixa válida em vez de zerar: uma leitura alta
+        # demais vira "tanque cheio", não "tanque vazio com alerta" - é o
+        # lado mais seguro do erro.
+        self.peso_disponivel = max(0.0, min(self.capacity, carga_truncada))
 
         # Consumo acumulado em m³ (capacidade - peso disponível, convertido)
         consumo_kg = max(self.capacity - self.peso_disponivel, 0.0)
